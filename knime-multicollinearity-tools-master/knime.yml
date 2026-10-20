@@ -1,0 +1,14 @@
+# Extension metadata
+name: multicollinearity_tools   
+group_id: org.multicollinearity # 
+description: Multicollinearity Tools  
+long_description: Python nodes for multicollinearity diagnostics.
+version: 0.1.0
+
+author: I.Leftheris
+vendor: University of Thessaly, Department of Economics
+license_file: LICENSE.TXT
+
+# Python settings 
+pixi_toml_path: pixi.toml
+extension_module: ./src/extension   
