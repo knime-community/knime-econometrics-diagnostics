@@ -1,4 +1,3 @@
-import os
 
 import logging
 
@@ -10,15 +9,23 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 
 LOGGER = logging.getLogger(__name__)
 
-CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-ICONS_PATH = os.path.join(CURRENT_DIR, "..", "icons")
+ICONS_PATH = "icons/"
+
+
+multicollinearity_category = knext.category(
+    path="/community",
+    level_id="multicollinearity",
+    name="Multicollinearity Tools",
+    description="Nodes for multicollinearity and influence diagnostics.",
+    icon=ICONS_PATH + "viftol.png",
+)
 
 
 @knext.node(
     name="VIF & TOL",  
     node_type=knext.NodeType.MANIPULATOR,
-    icon_path=os.path.join(ICONS_PATH, "viftol.png"),
-    category="/",
+    icon_path=ICONS_PATH + "viftol.png",
+    category=multicollinearity_category,
 )
 @knext.input_table(
     name="Input Data",
@@ -95,8 +102,8 @@ class VIFNode:
 @knext.node(
     name="Eigenvalues & Condition Index (CN)",
     node_type=knext.NodeType.MANIPULATOR,
-    icon_path=os.path.join(ICONS_PATH, "eigenvalues.png"),
-    category="/",
+    icon_path=ICONS_PATH + "eigenvalues.png",
+    category=multicollinearity_category,
 )
 @knext.input_table(
     name="Input Data",
@@ -161,8 +168,8 @@ class EigenvaluesCNNode:
 @knext.node(
     name="DFFITS (Influence Diagnostics)",
     node_type=knext.NodeType.MANIPULATOR,
-    icon_path=os.path.join(ICONS_PATH, "dffits.png"),
-    category="/",
+    icon_path=ICONS_PATH + "dffits.png",
+    category=multicollinearity_category,
 )
 @knext.input_table(
     name="Input Data",
@@ -276,8 +283,8 @@ class DFFITSNode:
 @knext.node(
     name="DFBETAS (Influence Diagnostics)",
     node_type=knext.NodeType.MANIPULATOR,
-    icon_path=os.path.join(ICONS_PATH, "dfbetas.png"),
-    category="/",
+    icon_path=ICONS_PATH + "dfbetas.png",
+    category=multicollinearity_category,
 )
 @knext.input_table(
     name="Input Data",

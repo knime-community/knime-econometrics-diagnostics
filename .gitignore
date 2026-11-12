@@ -1,0 +1,9 @@
+# Pixi environments
+.pixi/
+
+# Python bytecode cache
+__pycache__/
+*.py[cod]
+
+# Local build output
+local-update-site/
