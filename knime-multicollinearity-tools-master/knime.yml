@@ -1,8 +1,11 @@
 # Extension metadata
 name: multicollinearity_tools   
-group_id: org.multicollinearity # 
-description: Multicollinearity Tools  
-long_description: Python nodes for multicollinearity diagnostics.
+group_id: gr.uth.econ
+description: Multicollinearity and influence diagnostics for regression
+long_description: >-
+  Diagnostics for linear regression models: Variance Inflation Factor (VIF) and
+  Tolerance (TOL), eigenvalues and condition indices for multicollinearity, and
+  DFFITS and DFBETAS for identifying influential observations.
 version: 0.1.0
 
 author: I.Leftheris
@@ -11,4 +14,4 @@ license_file: LICENSE.TXT
 
 # Python settings 
 pixi_toml_path: pixi.toml
-extension_module: ./src/extension   
+extension_module: src/extension   
